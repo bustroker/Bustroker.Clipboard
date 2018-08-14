@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Clipboard";
+}
+
+<div class="row">
+    <div>
+        <h2></h2>
+        <textarea placeholder="Write anything and it will last... for a while :P" id="clipboard" cols="100" rows="10"></textarea>
+    </div>
+    <div>
+        <button class="btn" onclick="saveClipboard();">Keep</button>
+
+    </div>
+    <div hidden id="saved-message" class="alert alert-success" style="width:720px">
+        <strong>Done</strong>
+    </div>
+    <div hidden id="failed-message" class="alert alert-danger" style="width:720px">
+        <strong>Failed!</strong>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/index.js"></script>
+}
