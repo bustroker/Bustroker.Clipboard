@@ -1989,7 +1989,7 @@ input, select, textarea {
 /* Form */
 
 	form {
-		margin: 0 0 2em 0;
+		/*margin: 0 0 2em 0;*/
 	}
 
 	label {
@@ -2616,7 +2616,7 @@ input, select, textarea {
 	}
 
 	header.major {
-		margin-bottom: 3em;
+		margin-bottom: 1em;
 	}
 
 		header.major h2 {
@@ -3051,7 +3051,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 5em 5em 1em 5em ;
+		padding: 2em 5em 1em 5em ;
 		text-align: center;
 	}
 
@@ -3065,7 +3065,7 @@ input, select, textarea {
 		}
 
 		#header.alt {
-			padding: 7em 5em 4em 5em ;
+			/*padding: 7em 5em 4em 5em ;*/
 		}
 
 			#header.alt h1 {
