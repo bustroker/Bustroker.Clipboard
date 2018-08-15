@@ -88,8 +88,8 @@
         <h2>Login</h2>
     </header>
     <ul class="features">
-        <li>
-            @*<span class="icon major style1 fa-code"></span>*@
+        @*<li>
+            <span class="icon major style1 fa-code"></span>
             <h3>Use a local account to log in.</h3>
             <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
                 <div asp-validation-summary="All" class="text-danger"></div>
@@ -102,12 +102,12 @@
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    @*<div class="checkbox">
+                    <div class="checkbox">
                     <label asp-for="RememberMe">
                         <input asp-for="RememberMe" />
                         @Html.DisplayNameFor(m => m.RememberMe)
                     </label>
-                </div>*@
+                </div>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-default">Log in</button>
@@ -118,10 +118,10 @@
                     </p>
                 </div>
             </form>
-        </li>
+        </li>*@
         <li>
             @*<span class="icon major style3 fa-copy"></span>*@
-            <h3>Login faster</h3>
+            <h3>@*Login with facebook*@</h3>
             @{
                 var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
                 if (loginProviders.Count == 0)
