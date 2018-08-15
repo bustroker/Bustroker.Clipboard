@@ -37,6 +37,7 @@ namespace Joker.Clipboard.WebUI
             {
                 facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                facebookOptions.CallbackPath = Configuration["Authentication:Facebook:CallbackPath"];
             });
 
             // Add application services.
