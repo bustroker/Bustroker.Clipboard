@@ -19,16 +19,36 @@ namespace Joker.Clipboard.WebUI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var clipboard = ClipboardManager.GetClipboard(GetCurrentUser());
-            return Ok(clipboard);
+            var result = string.Empty;
+            if (IsAuthenticatedUser())
+            {
+                result = ClipboardManager.GetClipboard(GetCurrentUser());
+            }
+            else
+            {
+                result = ClipboardManager.GetAnonymousClipboard();
+            }
+            return Ok(result);
         }
 
         // POST: api/Clipboard
         [HttpPost]
         public IActionResult Post([FromBody]NewClipboardModel clipboard)
         {
-            ClipboardManager.SetClipboard(GetCurrentUser(), clipboard.NewClipboard);
+            if (IsAuthenticatedUser())
+            {
+                ClipboardManager.SetClipboard(GetCurrentUser(), clipboard.NewClipboard);
+            }
+            else
+            {
+                ClipboardManager.SetAnonymousClipboard(clipboard.NewClipboard);
+            }
             return Ok(new object());
+        }
+
+        private bool IsAuthenticatedUser()
+        {
+            return this.HttpContext.User.Identity.IsAuthenticated;
         }
 
         private string GetCurrentUser()
